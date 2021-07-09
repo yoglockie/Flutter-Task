@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_4/SecondScren.dart';
-// ignore: import_of_legacy_library_into_null_safe
-// import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(MyApp());
@@ -59,6 +58,9 @@ class _TaskFourState extends State<TaskFour> {
                 style: TextStyle(color: Colors.blue, fontSize: 15.0),
               ),
               trailing: Icon(Icons.home, color: Colors.blue),
+              onTap: () {
+                launch("https://en.wikipedia.org/wiki/Tiger");
+              },
               // tileColor: Colors.grey,
             ),
             Divider(thickness: 2.0, color: Colors.blue),
@@ -120,7 +122,7 @@ class _TaskFourState extends State<TaskFour> {
                 height: 200,
                 width: 200,
                 child: Image.network(
-                    "https://as1.ftcdn.net/jpg/01/07/99/42/500_F_107994250_cPTiphdmGOVM56qCuEvKu0AAWXBvbSx3.jpg"),
+                    "https://ichef.bbci.co.uk/news/976/cpsprodpb/0D47/production/_113699330_a51acb47-5f21-482b-8513-18594d9b0e39.jpg"),
               ),
             ),
             Container(
@@ -158,18 +160,24 @@ class _TaskFourState extends State<TaskFour> {
                 ),
               ),
             ),
-            // ElevatedButton(
-            //     onPressed: () async {
-            //       const url = 'https://en.wikipedia.org/wiki/Tiger';
-            //       if (await canLaunch(url)) {
-            //         await launch(url);
-            //       } else {
-            //         throw 'Could not launch $url';
-            //       }
-            //     },
-            //     child: Text("More Info")),
+            Padding(
+              padding: const EdgeInsets.only(left: 100.0, right: 100.0),
+              child: ElevatedButton(
+                  // onPressed: () async {
+                  //   const url = 'https://en.wikipedia.org/wiki/Tiger';
+                  //   if (await canLaunch(url)) {
+                  //     await launch(url);
+                  //   } else {
+                  //     throw 'Could not launch $url';
+                  //   }
+                  // },
+                  onPressed: () {
+                    launch("https://www.worldwildlife.org/species/tiger");
+                  },
+                  child: Text("More Info about Tiger")),
+            ),
 
-            //second animal
+            // second animal
 
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
