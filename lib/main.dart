@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_4/FormScreen.dart';
 import 'package:task_4/SecondScren.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -88,6 +89,16 @@ class _TaskFourState extends State<TaskFour> {
                 style: TextStyle(color: Colors.blue, fontSize: 15.0),
               ),
               trailing: Icon(Icons.help, color: Colors.blue),
+              //tileColor: Colors.grey,
+            ),
+            Divider(thickness: 2.0, color: Colors.blue),
+            ListTile(
+              title: Text(
+                "SignIn/SignUp",
+                style: TextStyle(color: Colors.blue, fontSize: 15.0),
+              ),
+              trailing: Icon(Icons.login_rounded, color: Colors.blue),
+
               //tileColor: Colors.grey,
             ),
           ],
@@ -284,6 +295,14 @@ class _TaskFourState extends State<TaskFour> {
                   size: 20,
                 ),
               ],
+            ),
+            Center(
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => FormScreen()));
+                  },
+                  child: Text("Fill the Form")),
             ),
           ],
         ),
